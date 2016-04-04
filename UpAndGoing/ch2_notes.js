@@ -456,3 +456,9 @@ function foo() {
 }
 
 // The last important detail to emphasize about transpilers is that they should now be thought of as a standard part of the JS development ecosystem and process. JS is going to continue to evolve, much more quickly than before, so every few months new syntax and new features will be added.
+
+
+// There are quite a few great transpilers for you to choose from. Here are some good options at the time of this writing:
+//
+// Babel (https://babeljs.io) (formerly 6to5): Transpiles ES6+ into ES5
+// Traceur (https://github.com/google/traceur-compiler): Transpiles ES6, ES7, and beyond into ES5
