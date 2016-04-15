@@ -22,10 +22,30 @@ function output(text) {
 
 function getFile(file) {
 	fakeAjax(file,function(text){
-		// what do we do here?
+			handleResponse(file, text);
 	});
 }
 
+function handleResponse(filename, contents) {
+	if (!(filename in responses)){
+		responses[filename] = contents;
+	}
+	var filenames = ["file1", "file2", "file3"];
+	for (var i = 0; i < filenames.length; i++) {
+		if (filenames[i] in responses){
+			if(typeof responses[filenames[i]] == "string"){
+				output(responses[filename[i]]);
+				responses[filename[i]] = false; //Why?
+			}
+		}
+		else {
+			return false;
+		}
+	}
+	output('Complete!');
+}
+
+var responses = {};
 // request all files at once in "parallel"
 getFile("file1");
 getFile("file2");
